@@ -1,0 +1,9 @@
+<site name="Medal" homepage="https://medal.tv/">
+	<example>https://medal.tv/games/ark-survival-ascended/clips/lG3cmPexf3-J3ZbLX?invite=X</example>
+
+	<tags><tag>gaming</tag></tags>
+
+	<host>medal.tv</host>
+	<extract>!medal\.tv/(?:.*?/)?clips?/(?'id'[-\w]+)!</extract>
+	<iframe src="//medal.tv/clip/{@id}"/>
+</site>
