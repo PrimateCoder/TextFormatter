@@ -4533,6 +4533,16 @@ class ParserTest extends Test
 					$configurator->MediaEmbed->add('youtube');
 				}
 			],
+			[
+				// https://xenforo.com/community/threads/s9e-media-sites.139274/post-1769719
+				'https://www.youtube.com/embed/sp7VbdKsXgA?clip=UgkxOzZEMnWnaqvedIljjCUoOYzXYBoYxluE&clipt=EMDkmgEY_eqbAQ',
+				'<r><YOUTUBE clip="UgkxOzZEMnWnaqvedIljjCUoOYzXYBoYxluE" clipt="EMDkmgEY_eqbAQ" id="sp7VbdKsXgA">https://www.youtube.com/embed/sp7VbdKsXgA?clip=UgkxOzZEMnWnaqvedIljjCUoOYzXYBoYxluE&amp;clipt=EMDkmgEY_eqbAQ</YOUTUBE></r>',
+				[],
+				function ($configurator)
+				{
+					$configurator->MediaEmbed->add('youtube');
+				}
+			],
 		];
 	}
 

@@ -253,6 +253,10 @@
 		<td><code>mastodon</code></td>
 		<td>https://mastodon.social/@HackerNewsBot/100181134752056592</td>
 	</tr>
+	<tr title="Medal" id="medal">
+		<td><code>medal</code></td>
+		<td>https://medal.tv/games/ark-survival-ascended/clips/lG3cmPexf3-J3ZbLX?invite=X</td>
+	</tr>
 	<tr title="Medium" id="medium">
 		<td><code>medium</code></td>
 		<td>https://medium.com/@donnydonny/team-internet-is-about-to-win-net-neutrality-and-they-didnt-need-googles-help-e7e2cf9b8a95</td>
