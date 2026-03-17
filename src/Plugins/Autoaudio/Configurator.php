@@ -1,0 +1,31 @@
+<?php declare(strict_types=1);
+
+/**
+* @package   s9e\TextFormatter
+* @copyright Copyright (c) The s9e authors
+* @license   http://www.opensource.org/licenses/mit-license.php The MIT License
+*/
+namespace s9e\TextFormatter\Plugins\Autoaudio;
+
+use s9e\TextFormatter\Plugins\AbstractStaticUrlReplacer\AbstractConfigurator;
+
+class Configurator extends AbstractConfigurator
+{
+	public    array  $fileExtensions = ['mp3', 'aac', 'wav'];
+	protected        $attrName       = 'src';
+	protected        $tagName        = 'AUDIO';
+
+	protected function getTemplate(): string
+	{
+		return '<p><a href="{@src}"><xsl:value-of select="@filename"/></a></p><p><audio controls="" src="{@src}"/></p>';
+	}
+
+	protected function setUp(): void
+	{
+		parent::setUp();
+
+		$tag = $this->configurator->tags[$this->tagName];
+		$tag->attributes->add('filename')->filterChain->append('urldecode');
+		$tag->attributePreprocessors->add('src', '/\\/(?\'filename\'[^\\/]+)$/');
+	}
+}
