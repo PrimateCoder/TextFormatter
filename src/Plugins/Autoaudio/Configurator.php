@@ -11,13 +11,13 @@ use s9e\TextFormatter\Plugins\AbstractStaticUrlReplacer\AbstractConfigurator;
 
 class Configurator extends AbstractConfigurator
 {
-	public    array  $fileExtensions = ['mp3', 'aac', 'wav'];
+	public    array  $fileExtensions = ['aac', 'flac', 'm4a', 'mp3', 'ogg', 'wav', 'wave'];
 	protected        $attrName       = 'src';
 	protected        $tagName        = 'AUDIO';
 
 	protected function getTemplate(): string
 	{
-		return '<p><a href="{@src}"><xsl:value-of select="@filename"/></a></p><p><audio controls="" src="{@src}"/></p>';
+		return '<p><a href="{@src}"><xsl:value-of select="@filename"/></a>:</p><p><audio controls="" src="{@src}"/></p>';
 	}
 
 	protected function setUp(): void
