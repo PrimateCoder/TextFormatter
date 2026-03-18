@@ -17,7 +17,7 @@ class Configurator extends AbstractConfigurator
 
 	protected function getTemplate(): string
 	{
-		return '<p><a href="{@src}"><xsl:value-of select="@filename"/></a>:</p><p><audio controls="" src="{@src}"/></p>';
+		return '<p><a href="{@' . $this->attrName . '}"><xsl:value-of select="@filename"/></a>:</p><p><audio controls="" src="{@' . $this->attrName . '}"/></p>';
 	}
 
 	protected function setUp(): void
@@ -26,6 +26,6 @@ class Configurator extends AbstractConfigurator
 
 		$tag = $this->configurator->tags[$this->tagName];
 		$tag->attributes->add('filename')->filterChain->append('urldecode');
-		$tag->attributePreprocessors->add('src', '/\\/(?\'filename\'[^\\/]+)$/');
+		$tag->attributePreprocessors->add($this->attrName, '/\\/(?\'filename\'[^\\/]+)$/');
 	}
 }
