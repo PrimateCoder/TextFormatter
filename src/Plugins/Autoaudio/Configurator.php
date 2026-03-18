@@ -11,7 +11,7 @@ use s9e\TextFormatter\Plugins\AbstractStaticUrlReplacer\AbstractConfigurator;
 
 class Configurator extends AbstractConfigurator
 {
-	public    array  $fileExtensions = ['aac', 'flac', 'm4a', 'mp3', 'ogg', 'wav', 'wave'];
+	public    array  $fileExtensions = ['aac', 'flac', 'm4a', 'mp3', 'wav', 'wave'];
 	protected        $attrName       = 'src';
 	protected        $tagName        = 'AUDIO';
 
