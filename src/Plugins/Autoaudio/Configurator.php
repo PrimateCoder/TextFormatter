@@ -17,7 +17,7 @@ class Configurator extends AbstractConfigurator
 
 	protected function getTemplate(): string
 	{
-		return '<p><a href="{@' . $this->attrName . '}"><xsl:value-of select="@filename"/></a>:</p><p><audio controls="" src="{@' . $this->attrName . '}"/></p>';
+		return '<div class="autoaudio"><p class="autoaudio-title"><a href="{@' . $this->attrName . '}"><xsl:value-of select="@filename"/></a>:</p><p class="autoaudio-player"><audio controls="" src="{@' . $this->attrName . '}"/></p></div>';
 	}
 
 	protected function setUp(): void

@@ -155,4 +155,30 @@ class ConfiguratorTest extends Test
 			'https://example.org/audio.mp4'
 		);
 	}
+
+	/**
+	* @testdox The default template contains CSS classes for styling
+	*/
+	public function testTemplateCSSClasses()
+	{
+		$this->configurator->Autoaudio;
+		$template = (string) $this->configurator->tags['AUDIO']->template;
+
+		$this->assertStringContainsString('class="autoaudio"', $template);
+		$this->assertStringContainsString('class="autoaudio-title"', $template);
+		$this->assertStringContainsString('class="autoaudio-player"', $template);
+	}
+
+	/**
+	* @testdox The template can be overridden after configuration
+	*/
+	public function testTemplateOverride()
+	{
+		$this->configurator->Autoaudio;
+		$tag = $this->configurator->tags['AUDIO'];
+		$tag->template = '<audio controls="" class="custom" src="{@src}"/>';
+
+		$this->assertStringContainsString('class="custom"', (string) $tag->template);
+		$this->assertStringNotContainsString('autoaudio', (string) $tag->template);
+	}
 }
