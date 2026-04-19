@@ -87,11 +87,11 @@ class ParserTest extends Test
 		return [
 			[
 				'http://example.org/audio.mp3',
-				'<p><a href="http://example.org/audio.mp3">audio.mp3</a>:</p><p><audio controls="" src="http://example.org/audio.mp3"></audio></p>'
+				'<div class="autoaudio"><p class="autoaudio-title"><a href="http://example.org/audio.mp3">audio.mp3</a>:</p><p class="autoaudio-player"><audio controls="" src="http://example.org/audio.mp3"></audio></p></div>'
 			],
 			[
 				'http://example.org/my%20song.mp3',
-				'<p><a href="http://example.org/my%20song.mp3">my song.mp3</a>:</p><p><audio controls="" src="http://example.org/my%20song.mp3"></audio></p>'
+				'<div class="autoaudio"><p class="autoaudio-title"><a href="http://example.org/my%20song.mp3">my song.mp3</a>:</p><p class="autoaudio-player"><audio controls="" src="http://example.org/my%20song.mp3"></audio></p></div>'
 			],
 		];
 	}
